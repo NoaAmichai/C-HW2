@@ -19,7 +19,7 @@ mats.a: $(MAT)
 	 ranlib mats.a
 
 matsd.so:$(MAT)
-	$(CC)  -shared -o matsd.so $(MAT)
+	$(CC) -shared -o matsd.so $(MAT)
 
 
 #Create o files

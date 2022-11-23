@@ -10,5 +10,5 @@ void getMat(int mat[N][N]){
             mat[i][j]=num;
         }
     }
-    return mat;
+    return;
 }
