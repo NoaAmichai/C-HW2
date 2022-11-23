@@ -1,3 +1,12 @@
-//
-// Created by avi on 11/23/22.
-//
+#include <stdio.h>
+#include "my_mat.h"
+
+int main(){
+    char funtcion;
+    scanf("%c",&funtcion);
+
+
+
+
+    return 0;
+}
