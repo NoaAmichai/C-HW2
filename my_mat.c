@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "my_mat.h"
 #define N 10
 
 void getMat(int mat[N][N]){
