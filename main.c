@@ -1,27 +1,25 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-int main(){
+#define N 10
+
+int main() {
     char funtcion;
-    scanf("%c",&funtcion);
+    int arr[N][N];
+    while (funtcion != EOF) {
+        scanf("%c", &funtcion);
 
-    if(funtcion == 'A'){
-        
+        if (funtcion == 'A') {
+            getMat(arr);
+        } else if (funtcion == 'B') {
 
+        } else if (funtcion == 'C') {
+
+        } else if (funtcion == 'D') {
+            break;
+        }
     }
-    else if(funtcion =='B'){
 
-    }
-
-    else if(funtcion == 'C'){
-
-    }
-
-    else if(funtcion == 'D')
-    {
-    
-    }
-    
 
     return 0;
 }
