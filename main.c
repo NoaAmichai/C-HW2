@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "my_mat.h"
-
 #define N 10
 
 int main()
@@ -17,10 +16,12 @@ int main()
         }
         else if (funtcion == 'B')
         {
+            scanf("%d %d",&i,&j);
             hasPath(arr, i, j);
         }
         else if (funtcion == 'C')
         {
+            scanf("%d %d",&i,&j);
             theShortestPath(arr, i, j);
         }
         else if (funtcion == 'D')
