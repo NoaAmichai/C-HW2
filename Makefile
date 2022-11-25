@@ -5,7 +5,7 @@ MAT = my_mat.o
 MAT_H = my_mat.h
 MAIN_O = main.o
 
-# VALGRIND =  valgrind -q --leak-check=full 
+valgrind -q --leak-check=full 
 
 all:mats matsd connections
 
