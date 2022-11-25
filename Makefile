@@ -32,10 +32,10 @@ my_mat.o: my_mat.c $(MAT_H)
 
 #Create mains
 mains: $(MAIN_O) mats.a
-	$(CC) $(FLAGS) -o mains $(MAIN_O) mats.a
+	$(CC) $(FLAGS) -o mains valgrind -q --leak-check=full $(MAIN_O) mats.a
 
 maind: $(MAIN_O) matsd.so
-	$(CC) $(FLAGS) -o maind $(MAIN_O) ./matsd.so
+	$(CC) $(FLAGS) -o maind valgrind -q --leak-check=full $(MAIN_O) ./matsd.so
 
 clean:
 	rm -f *.o *.a *.so mains maind
