@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include "my_mat.h"
 #define N 10
+#define MIN(a,b) ((a > b) ? (b) : (a))
 
-int min(int a, int b)
-{
-    if (a < b)
-        return a;
-    else
-        return b;
-}
+// int min(int a, int b)
+// {
+//     if (a < b)
+//         return a;
+//     else
+//         return b;
+// }
 
-
-//NEED TO FIX THIS FUNCTION
+// NEED TO FIX THIS FUNCTION
 void setMat(int mat[N][N])
 {
     int k, i, j;
-    for (k = 0; k < N; ++k)
+    for (k = 0; k < N; k++)
     {
-        for (i = 0; i < N; ++i)
+        for (i = 0; i < N; i++)
         {
-            for (j = 0; j < N; ++j)
+            for (j = 0; j < N; j++)
             {
                 if (i == j)
                 {
@@ -27,25 +27,36 @@ void setMat(int mat[N][N])
                 }
                 else
                 {
-                    mat[i][j] = min(mat[i][k] + mat[k][j], mat[i][j]);
+                    mat[i][j] = MIN(mat[i][k] + mat[k][j], mat[i][j]);
                 }
             }
         }
     }
+    // int row, columns;
+    // for (row = 0; row < N; row++)
+    // {
+    //     for (columns = 0; columns < N; columns++)
+    //     {
+    //         printf("%d     ", mat[row][columns]);
+    //     }
+    //     printf("\n");
+    // }
+
 }
 
 void getMat(int mat[N][N])
 {
     int num, i, j;
-    for (i = 0; i < N - 1; i++)
+    for (i = 0; i < N ; i++)
     {
-        for (j = 0; j < N - 1; j++)
+        for (j = 0; j < N ; j++)
         {
             scanf("%d", &num);
             mat[i][j] = num;
+            printf("%d",mat[i][j]);
         }
+        printf("\n");
     }
-    return;
 }
 
 void hasPath(int mat[N][N], int i, int j)
