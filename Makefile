@@ -3,14 +3,16 @@ AR =ar
 FLAGS = -Wall -g
 MAT = my_mat.o
 MAT_H = my_mat.h
-MAIN_O = main.o
+MAIN_O = main.o 
+
+# valgrind -q --leak-check=full
 
 all:mats matsd connections
 
 .PHONY: all clean 
 
 connections : $(MAIN_O) matsd.so
-	$(CC) $(FLAGS) -o connections $(MAIN_O) valgrind -q --leak-check=full  ./matsd.so
+	$(CC) $(FLAGS) -o connections $(MAIN_O) ./matsd.so
 
 mats: mats.a
 matsd: matsd.so
