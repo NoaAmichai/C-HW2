@@ -4,8 +4,10 @@
 
 void getMat(int[N][N]);
 
-void hasPath(int[N][N],int i, int j);
+void setMat(int[N][N]);
 
-void theShortestPath(int[N][N],int i, int j);
+void hasPath(int[N][N], int i, int j);
+
+void theShortestPath(int[N][N], int i, int j);
 
 #endif

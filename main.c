@@ -7,12 +7,12 @@ int main()
     int i, j;
     char funtcion;
     int arr[N][N];
-    while (funtcion != EOF)
+    while (scanf("%c", &funtcion) != EOF)
     {
-        scanf("%c", &funtcion);
         if (funtcion == 'A')
         {
             getMat(arr);
+            setMat(arr);
         }
         else if (funtcion == 'B')
         {
