@@ -6,23 +6,23 @@ int main()
 {
     int i, j;
     char funtcion;
-    int arr[N][N];
+    int mat[N][N];
     while (scanf("%c", &funtcion) != EOF)
     {
         if (funtcion == 'A')
         {
-            getMat(arr);
-            setMat(arr);
+            getMat(mat);
+            setMat(mat);
         }
         else if (funtcion == 'B')
         {
             scanf("%d %d",&i,&j);
-            hasPath(arr, i, j);
+            hasPath(mat, i, j);
         }
         else if (funtcion == 'C')
         {
             scanf("%d %d",&i,&j);
-            theShortestPath(arr, i, j);
+            theShortestPath(mat, i, j);
         }
         else if (funtcion == 'D')
         {
