@@ -17,7 +17,7 @@ void setMat(int mat[N][N])
                 {
                     if (i == j)
                     {
-                        continue;;
+                        continue;
                     }
                     if (mat[i][j] > 0)
                     {
