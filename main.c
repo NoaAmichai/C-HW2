@@ -16,12 +16,14 @@ int main()
         }
         else if (funtcion == 'B')
         {
-            scanf("%d %d",&i,&j);
+            scanf("%d",&i);
+            scanf("%d" ,&j);
             hasPath(mat, i, j);
         }
         else if (funtcion == 'C')
         {
-            scanf("%d %d",&i,&j);
+            scanf("%d" ,&i);
+            scanf("%d" ,&j);
             theShortestPath(mat, i, j);
         }
         else if (funtcion == 'D')

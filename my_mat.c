@@ -3,7 +3,7 @@
 #define N 10
 #define MIN(a, b) ((a > b) ? (b) : (a))
 
-// NEED TO FIX THIS FUNCTION
+
 void setMat(int mat[N][N])
 {
     int k, i, j;
@@ -13,24 +13,20 @@ void setMat(int mat[N][N])
         {
             for (j = 0; j < N; j++)
             {
-                if (i == j)
+                if ((mat[i][k] != 0) && (mat[k][j] != 0))
                 {
-                    mat[i][j] = 0;
-                }
-                else if (((mat[i][k] + mat[k][j]) == 0) && (mat[i][j] > 0))
-                {
-                    continue;
-                }
-                else if (((mat[i][k] + mat[k][j]) > 0) && (mat[i][j] == 0))
-                {
-                    mat[i][j] = mat[i][k] + mat[k][j];
-                }
-                else if (((mat[i][k] + mat[k][j]) != 0) && (mat[i][j] != 0))
-                {
-                    mat[i][j] = MIN(mat[i][k] + mat[k][j], mat[i][j]);
-                }
-                else{
-                    mat[i][j] = 0;
+                    if (i == j)
+                    {
+                        continue;;
+                    }
+                    if (mat[i][j] > 0)
+                    {
+                        mat[i][j] = MIN(mat[i][k] + mat[k][j], mat[i][j]);
+                    }
+                    else
+                    {
+                        mat[i][j] = mat[i][k] + mat[k][j];
+                    }
                 }
             }
         }
@@ -46,15 +42,12 @@ void getMat(int mat[N][N])
         {
             scanf("%d", &num);
             mat[i][j] = num;
-            // printf("%d", mat[i][j]);
         }
-        // printf("\n");
     }
 }
 
 void hasPath(int mat[N][N], int i, int j)
 {
-    // setMat(mat);
     if (mat[i][j] > 0)
     {
 
@@ -68,7 +61,6 @@ void hasPath(int mat[N][N], int i, int j)
 
 void theShortestPath(int mat[N][N], int i, int j)
 {
-    // setMat(mat);
     if (mat[i][j] > 0)
     {
         printf("%d\n", mat[i][j]);
