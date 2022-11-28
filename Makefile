@@ -5,20 +5,13 @@ MAT = my_mat.o
 MAT_H = my_mat.h
 MAIN_O = main.o 
 
-#val: valgrind -q --leak-check=full ./connections
+all: mats matsd connections
 
-all: valgrind mats matsd connections
-
-.PHONY: all clean valgrind
-
-valgrind: connections
-	valgrind --leak-check=full ./connections
-
+.PHONY: all clean 
 
 connections : $(MAIN_O) matsd.so
 	$(CC) $(FLAGS) -o connections $(MAIN_O) ./matsd.so 
 	
-
 mats: mats.a
 matsd: matsd.so
 #Create lib
